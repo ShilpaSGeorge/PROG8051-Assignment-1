@@ -14,7 +14,7 @@ namespace CSharpTutorials
             string firstPet = "Cat";
             string secondPet = "Dog";
             string thirdPet = "Rabbit";
-            Console.WriteLine($"Please choose a type of pet: 1.{firstPet} 2.{secondPet} 3.{thirdPet}");
+            Console.WriteLine($"Please choose a type of pet: \n 1.{firstPet} \n 2.{secondPet} \n 3.{thirdPet}");
 
             /*Get the user's pet choice*/
             Console.WriteLine("User Input: ");
@@ -38,6 +38,32 @@ namespace CSharpTutorials
             Console.WriteLine("User Input: ");
             string petName = Console.ReadLine();
             Console.WriteLine($"Welcome,{petName}! Let's take good care of {petName}");
+
+            /* Pet Care actions*/
+            string firstAction = "Feed";
+            string secondAction = "Play";
+            string thirdAction = "Rest";
+            string fourthAction = "Status";
+            string fifthAction = "Exit";
+            Console.WriteLine($"Main Menu: \n 1.{firstAction} {petName} \n 2.{secondAction} with {petName} \n 3.Let {petName} { thirdAction} " +
+                $"\n 4.Check {petName}'s {fourthAction} \n 5.{fifthAction}");
+
+            /*Get the action request from user*/
+            Console.WriteLine("User Input:");
+            int b = Convert.ToInt32(Console.ReadLine());
+           
+
+
+            Console.WriteLine($"{petName}'s status");
+
+
+
+
+
+
+
+
+
 
 
 
