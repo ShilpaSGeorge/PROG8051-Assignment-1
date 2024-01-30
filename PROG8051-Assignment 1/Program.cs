@@ -51,6 +51,28 @@ namespace CSharpTutorials
             /*Get the action request from user*/
             Console.WriteLine("User Input:");
             int b = Convert.ToInt32(Console.ReadLine());
+
+            /*Check for the initial status of pet*/
+            int hunger = 4;
+            int happy = 3;
+            int health = 5;
+            
+            while(b==4)
+            {
+                Console.WriteLine($"{petName}'s  {fourthAction}: \n - Hunger : {hunger} \n - Happiness : {happy} \n - Health : {health}");
+                return;
+            }
+
+            /*Implementing the pet care actions*/
+
+            /*while (b<5)
+            {
+                if(b==1)
+                {
+                    Console.WriteLine("Feed Buddy");
+
+                }
+            }*/
            
 
 
