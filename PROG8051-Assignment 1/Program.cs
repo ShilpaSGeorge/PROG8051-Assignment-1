@@ -62,7 +62,7 @@ namespace CSharpTutorials
 
                 /*Check for the initial status of pet*/
 
-                
+
                 while (b == 4)
                 {
                     Console.WriteLine($"{petName}'s  {fourthAction}: \n - Hunger : {hunger} \n - Happiness : {happy} \n - Health : {health}");
@@ -92,41 +92,61 @@ namespace CSharpTutorials
                 {
                     Console.WriteLine("Exit");
                 }*/
-                switch(b)
+                switch (b)
                 {
                     case 1:
                         Console.WriteLine($"Great!! {petName} is fed well and is now energetic");
                         hunger = hunger - 1;
                         health = health + 2;
+                        happy = happy - 1;
                         break;
                     case 2:
                         Console.WriteLine($"Wonderful!!{petName} played well and he is happy");
                         hunger = hunger + 1;
                         happy = happy + 2;
-                        health = health - 1;
+                        health = health - 2;
                         break;
                     case 3:
                         Console.WriteLine($"Shh!!{petName} is taking a nap");
-                        happy = happy - 1;
+                        happy = happy - 2;
                         health = health + 2;
+                        hunger = hunger - 1;
                         break;
-                    
+
                     case 5:
                         Console.WriteLine($"Bye{petName} see you tomorrow!!");
                         break;
 
 
                 }
+                /* Checking for health conditions and suggesting appropriate action for crititcal conditions*/
 
-                /*Console.WriteLine($"Hunger is {hunger}");*/
-            }          
+                if (hunger > 4 && health < 5)
+                {
+                    Console.WriteLine($"Grrrr..{petName} is hungry and his health is deterioating. Please feed {petName}!!");
+                }
+                else if (happy < 3 && hunger < 4)
+                {
+                    Console.WriteLine($"Hmmm... {petName} is sad he needs to play ");
+                }
+                else if (happy > 4 && health < 3)
+                {
+                    Console.WriteLine($"Uff {petName} needs rest. Please allow {petName} to take a nap");
+                }
+                else
+                {
+                    Console.WriteLine($"{petName} is fit and happy");
+                }
+
+                
+            }
 
 
 
-                   
 
 
-            
+
+
 
 
 
