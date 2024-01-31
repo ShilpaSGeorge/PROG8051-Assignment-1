@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,38 +46,87 @@ namespace CSharpTutorials
             string thirdAction = "Rest";
             string fourthAction = "Status";
             string fifthAction = "Exit";
-            Console.WriteLine($"Main Menu: \n 1.{firstAction} {petName} \n 2.{secondAction} with {petName} \n 3.Let {petName} { thirdAction} " +
-                $"\n 4.Check {petName}'s {fourthAction} \n 5.{fifthAction}");
-
-            /*Get the action request from user*/
-            Console.WriteLine("User Input:");
-            int b = Convert.ToInt32(Console.ReadLine());
-
-            /*Check for the initial status of pet*/
+            /*Console.WriteLine($"Main Menu: \n 1.{firstAction} {petName} \n 2.{secondAction} with {petName} \n 3.Let {petName} { thirdAction} " +
+                $"\n 4.Check {petName}'s {fourthAction} \n 5.{fifthAction}");*/
+            string action = $"Main Menu: \n 1.{firstAction} {petName} \n 2.{secondAction} with {petName} \n 3.Let {petName} {thirdAction} " +
+                $"\n 4.Check {petName}'s {fourthAction} \n 5.{fifthAction}";
             int hunger = 4;
             int happy = 3;
             int health = 5;
-            
-            while(b==4)
+            /*Get the action request from user*/
+            for (int i = 0; i <= 6; i++)
             {
-                Console.WriteLine($"{petName}'s  {fourthAction}: \n - Hunger : {hunger} \n - Happiness : {happy} \n - Health : {health}");
-                return;
-            }
+                Console.WriteLine(action);
+                Console.WriteLine("User Input:");
+                int b = Convert.ToInt32(Console.ReadLine());
 
-            /*Implementing the pet care actions*/
+                /*Check for the initial status of pet*/
 
-            /*while (b<5)
-            {
-                if(b==1)
+                
+                while (b == 4)
                 {
-                    Console.WriteLine("Feed Buddy");
+                    Console.WriteLine($"{petName}'s  {fourthAction}: \n - Hunger : {hunger} \n - Happiness : {happy} \n - Health : {health}");
+
+                    break;
 
                 }
-            }*/
-           
+
+                /*Implementing the pet care actions*/
 
 
-            Console.WriteLine($"{petName}'s status");
+                /*if (b == 1)
+                {
+                    Console.WriteLine($"Great!! {petName} is fed well and is now energetic");
+                    hunger = hunger - 1;
+                    health = health + 2;
+                }
+                else if (b==2)
+                {
+                    Console.WriteLine($"Wonderful!!{petName} played well and he is happy");
+                    hunger = hunger + 1;
+                    happy = happy + 2;
+                    health = health - 1;
+                    
+                }
+                else
+                {
+                    Console.WriteLine("Exit");
+                }*/
+                switch(b)
+                {
+                    case 1:
+                        Console.WriteLine($"Great!! {petName} is fed well and is now energetic");
+                        hunger = hunger - 1;
+                        health = health + 2;
+                        break;
+                    case 2:
+                        Console.WriteLine($"Wonderful!!{petName} played well and he is happy");
+                        hunger = hunger + 1;
+                        happy = happy + 2;
+                        health = health - 1;
+                        break;
+                    case 3:
+                        Console.WriteLine($"Shh!!{petName} is taking a nap");
+                        happy = happy - 1;
+                        health = health + 2;
+                        break;
+                    
+                    case 5:
+                        Console.WriteLine($"Bye{petName} see you tomorrow!!");
+                        break;
+
+
+                }
+
+                /*Console.WriteLine($"Hunger is {hunger}");*/
+            }          
+
+
+
+                   
+
+
+            
 
 
 
