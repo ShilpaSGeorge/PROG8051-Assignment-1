@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace CSharpTutorials
 {
     class Program
@@ -12,10 +13,12 @@ namespace CSharpTutorials
         static void Main(string[] args)
         {
             /*Type of Pets*/
-            string firstPet = "Cat";
-            string secondPet = "Dog";
-            string thirdPet = "Rabbit";
-            Console.WriteLine($"Please choose a type of pet: \n 1.{firstPet} \n 2.{secondPet} \n 3.{thirdPet}");
+            /* string firstPet = "Cat";
+             string secondPet = "Dog";
+             string thirdPet = "Rabbit";*/
+            string petType = " \n 1.Cat \n 2.Dog \n 3.Rabbit ";
+
+            Console.WriteLine($"Please choose a type of pet: {petType}");
 
             /*Get the user's pet choice*/
             Console.WriteLine("User Input: ");
@@ -25,15 +28,15 @@ namespace CSharpTutorials
 
             if (a == 1)
             {
-                Console.WriteLine($"You have chosen a {firstPet}. What would you like to name your pet?");
+                Console.WriteLine($"You have chosen a Cat. What would you like to name your pet?");
             }
             else if (a == 2)
             {
-                Console.WriteLine($"You have chosen a {secondPet}. What would you like to name your pet?");
+                Console.WriteLine($"You have chosen a Dog. What would you like to name your pet?");
             }
             else
             {
-                Console.WriteLine($"You have chosen a {thirdPet}. What would you like to name your pet?");
+                Console.WriteLine($"You have chosen a Rabbit. What would you like to name your pet?");
             }
             /*Get the name of the pet and display a welcome message*/
             Console.WriteLine("User Input: ");
@@ -46,30 +49,35 @@ namespace CSharpTutorials
             string thirdAction = "Rest";
             string fourthAction = "Status";
             string fifthAction = "Exit";
+
             /*Console.WriteLine($"Main Menu: \n 1.{firstAction} {petName} \n 2.{secondAction} with {petName} \n 3.Let {petName} { thirdAction} " +
                 $"\n 4.Check {petName}'s {fourthAction} \n 5.{fifthAction}");*/
             string action = $"Main Menu: \n 1.{firstAction} {petName} \n 2.{secondAction} with {petName} \n 3.Let {petName} {thirdAction} " +
                 $"\n 4.Check {petName}'s {fourthAction} \n 5.{fifthAction}";
             int hunger = 4;
-            int happy = 3;
+            int happy = 4;
             int health = 5;
+
             /*Get the action request from user*/
-            for (int i = 0; i <= 6; i++)
+            for (int i = 0; i <= 5; i++)
+
             {
                 Console.WriteLine(action);
                 Console.WriteLine("User Input:");
                 int b = Convert.ToInt32(Console.ReadLine());
 
-                /*Check for the initial status of pet*/
 
 
-                while (b == 4)
-                {
-                    Console.WriteLine($"{petName}'s  {fourthAction}: \n - Hunger : {hunger} \n - Happiness : {happy} \n - Health : {health}");
+                
 
-                    break;
 
-                }
+                 while (b == 5)
+                 {
+                     
+                     Console.WriteLine($"Bye {petName} see you tomorrow!!");
+                    return;
+
+                 }
 
                 /*Implementing the pet care actions*/
 
@@ -86,7 +94,7 @@ namespace CSharpTutorials
                     hunger = hunger + 1;
                     happy = happy + 2;
                     health = health - 1;
-                    
+
                 }
                 else
                 {
@@ -97,7 +105,7 @@ namespace CSharpTutorials
                     case 1:
                         Console.WriteLine($"Great!! {petName} is fed well and is now energetic");
                         hunger = hunger - 1;
-                        health = health + 2;
+                        health = health + 1;
                         happy = happy - 1;
                         break;
                     case 2:
@@ -112,16 +120,23 @@ namespace CSharpTutorials
                         health = health + 2;
                         hunger = hunger - 1;
                         break;
+                    case 4:
+                        Console.WriteLine($"{petName}'s  {fourthAction}: \n - Hunger : {hunger} \n - Happiness : {happy} \n - Health : {health}");
+                        break;
 
-                    case 5:
-                        Console.WriteLine($"Bye{petName} see you tomorrow!!");
+                   
+                    default:
+                        Console.WriteLine("Bad Input");
                         break;
 
 
-                }
-                /* Checking for health conditions and suggesting appropriate action for crititcal conditions*/
 
-                if (hunger > 4 && health < 5)
+
+
+                }
+                
+
+                if (hunger > 6 && health < 3)
                 {
                     Console.WriteLine($"Grrrr..{petName} is hungry and his health is deterioating. Please feed {petName}!!");
                 }
@@ -129,16 +144,19 @@ namespace CSharpTutorials
                 {
                     Console.WriteLine($"Hmmm... {petName} is sad he needs to play ");
                 }
-                else if (happy > 4 && health < 3)
+                else if (happy > 6 && health < 3)
                 {
                     Console.WriteLine($"Uff {petName} needs rest. Please allow {petName} to take a nap");
                 }
                 else
                 {
-                    Console.WriteLine($"{petName} is fit and happy");
+                    /*Console.WriteLine($"{petName} is fit and happy");*/
+                    Console.WriteLine(" ");
+                    
+
                 }
 
-                
+
             }
 
 
